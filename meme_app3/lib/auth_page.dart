@@ -72,7 +72,8 @@ class _AuthPageState extends State<AuthPage> {
                     await auth.signInWithEmailAndPassword(
                         email: _email, password: _password);
                     Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => SelectMeme()));
+                      MaterialPageRoute(builder: (context) => SelectMeme()),
+                    );
                   } on FirebaseAuthException catch (e) {
                     print(e.message);
                   }

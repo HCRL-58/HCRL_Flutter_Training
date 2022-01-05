@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:meme_app3/editmeme.dart';
+
 import 'meme_data.dart';
 
 class SelectMeme extends StatefulWidget {
@@ -48,7 +51,7 @@ class _SelectMemeState extends State<SelectMeme> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                  )
+                  ),
               ],
             ),
             maxItems < memeName.length
@@ -56,7 +59,7 @@ class _SelectMemeState extends State<SelectMeme> {
                     onPressed: () {
                       setState(() {
                         if (maxItems + 20 < memeName.length) {
-                          maxItems += 20;
+                          maxItems = maxItems + 20;
                         } else {
                           maxItems = memeName.length;
                         }
